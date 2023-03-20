@@ -1,0 +1,31 @@
+/*nav info*/
+.nav__info{
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.nav__info .info__title{
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--color-quaternary);
+    margin-bottom: 10px;
+}
+.nav__info hr{
+    width: 30%;
+    height: 5px;
+    background-color: var(--color-secondary);
+    border: none;
+    margin-bottom: 10px;
+}
+.nav__info .info__subtitle{
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--color-tertiary);
+    margin-bottom: 10px;
+}
+.nav__info .info__subtitle a{
+    text-decoration: none;
+    color: var(--color-tertiary);
+}

@@ -1,0 +1,49 @@
+<app-navinfo [title] = "'Empleos'"></app-navinfo>
+<div class="container">
+    <div class="container__left">
+        <div class="container__left__search">
+            <div class="container__left__search__input">
+                <input type="text" placeholder="Buscar... *EN CONSTRUCCION* " [(ngModel)]="searchTerm">
+                <button class="btn-search"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </div>
+        </div>
+        <hr>
+        <div class="container__left__cards" >
+            <ng-container *ngFor="let cardEmpleo of CardEmpleos; let idControl=index">
+                <div class="container__left__cards__card" *ngIf="cardEmpleo.nombre_anuncio.toLowerCase().includes(searchTerm.toLowerCase()) || cardEmpleo.nombre_empresa.toLowerCase().includes(searchTerm.toLowerCase()) || cardEmpleo.formacion_anuncio.toLowerCase().includes(searchTerm.toLowerCase())">
+                    <div class="card__header" >
+                        <img class="card__header__icon" src="{{cardEmpleo.img_empresa}}" alt="">
+                        <h2 class="card__header__title">{{cardEmpleo.nombre_empresa}}<i *ngIf="cardEmpleo.verificacion_empresa == '1'" class="fa-solid fa-circle-check" style="color: rgb(0, 255, 0); margin-left: 5px;"></i></h2>
+                    </div>
+                    <div class="card__body">
+                        <ul>
+                            <li><i class="fa-solid fa-building-columns"></i><span>Titulo: </span> <p>{{cardEmpleo.nombre_anuncio}}</p></li>
+                            <li><i class="fa-solid fa-map-location"></i><span>Ubicacion:</span> <p>{{cardEmpleo.direccion_anuncio}}</p></li>
+                            <li><i class="fa-solid fa-money-bill-wave"></i><span>Salario:</span> <p>s/.{{cardEmpleo.remuneracion_anuncio}}</p></li>
+                            <li><i class="fa-regular fa-calendar-days"></i><span>Hasta:</span> <p>{{cardEmpleo.fecha_fin_anuncio}}</p></li>
+                            <li><i class="fa-regular fa-calendar-days"></i><span>Formacion:</span> </li>
+                            <p style="margin-left: 25px;color: var(--color-secondary);font-size: 1.2rem;font-weight: 600;">{{cardEmpleo.formacion_anuncio}}</p>
+                        </ul>
+                    </div>
+                    <div class="card__footer">
+                        <a class="btn-primary" [routerLink]="['/empleos/', cardEmpleo.id_anuncio]" routerLinkActive="router-link-active" > Mas detalles</a>
+                    </div>
+                </div>
+            </ng-container>
+            
+            
+        </div>
+    </div>
+    <div class="container__right">
+        <!--<div class="container__rigth__info">
+            <h2 class="container__right__title">Categorias</h2>
+            <hr>
+            <ul>
+                <li><a href="">*Administracion</a></li>
+                <li><a href="">*Contabilidad</a></li>
+                <li><a href="">*Informatica</a></li>
+            </ul>
+        </div>-->
+        <app-sidebar style="width: 100%;"></app-sidebar>
+    </div>
+</div>

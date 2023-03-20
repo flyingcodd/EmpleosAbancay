@@ -1,0 +1,78 @@
+<app-navinfo [title] = "'Empleos'"></app-navinfo>
+<div class="container">
+    <div class="container__left">
+        <div class="container__left__previus">
+            <a [routerLink]="['/empleos']" routerLinkActive="router-link-active" ><i class="fa-solid fa-arrow-left"></i> Regresar</a>
+        </div>
+        <hr>
+        <div class="container__left__cards">
+            <div class="container__left__cards__card">
+                <div class="card__header">
+                    <img class="card__header__icon" src="{{ Empresa.img_empresa }}" alt="">
+                    <h2 class="card__header__title">{{ Empresa.nombre_empresa }}<i *ngIf="Empresa.verificacion_empresa == '1'" class="fa-solid fa-circle-check" style="color: rgb(0, 255, 0); margin-left: 5px;"></i></h2>
+                </div>
+                <div class="card__body">
+                    <ul>
+                        <div>
+                            <li><i class="fa-solid fa-building-columns"></i><span>Titulo: </span> </li>
+                            <p>{{ Empleo.nombre_anuncio }}</p>
+                        </div>
+                        <div>
+                            <li><i class="fa-solid fa-map-location"></i><span>Ubicacion:</span></li>
+                            <p>{{ Empleo.direccion_anuncio }}</p>
+                        </div>
+                        <div>
+                            <li><i class="fa-solid fa-money-bill-wave"></i><span>Salario:</span></li>
+                            <p>S/. {{ Empleo.remuneracion_anuncio }}</p>
+                        </div>
+                        <div>
+                            <li><i class="fa-regular fa-calendar-days"></i><span>Presentar hasta la fecha:</span></li>
+                            <p>{{ Empleo.fecha_fin_anuncio.substring(0,10) }}</p>
+                        </div>
+                        <div>
+                            <li><i class="fa-solid fa-graduation-cap"></i><span>Formacion:</span></li>
+                            <p>{{ Empleo.formacion_anuncio }}</p>
+                        </div>
+                        <div>
+                            <li><i class="fa-solid fa-briefcase"></i><span>Numero de vacantes:</span> </li>
+                            <p>{{ Empleo.nrovacantes_anuncio }}</p>
+                        </div>
+                        <div>
+                            <li><i class="fa-solid fa-industry"></i><span>Empresa:</span> </li>
+                            <p>{{ Empresa.nombre_empresa }}</p>
+                        </div>
+                        <div>
+                            <li><i class="fa-solid fa-circle-info"></i><span>Detalles:</span></li>
+                            <p>
+                                <li *ngFor="let detalle of Empleo.detalles_anuncio.split('*')">
+                                    - {{ detalle }}
+                                </li>
+                                <br> Para mas info: <br>
+                                - <a href="{{ Empleo.url_anuncio }}">{{ Empleo.url_anuncio }}</a>
+                            </p>    
+                        </div>
+                    </ul>
+                </div>
+            </div>
+            <!--Atencion-->
+            <p style="color: red; font-size: 12px; text-align: center;">
+                La plataforma de empleos Abancay no se hace responsable de la veracidad de la informacion publicada en esta pagina,
+                por lo que no se hace responsable de los daños y perjuicios que puedan derivarse de la utilizacion de la informacion
+                contenida en esta pagina.
+            </p>
+            
+        </div>
+    </div>
+    <div class="container__right">
+        <!--<div class="container__rigth__info">
+            <h2 class="container__right__title">Categorias</h2>
+            <hr>
+            <ul>
+                <li><a href="">*Administracion</a></li>
+                <li><a href="">*Contabilidad</a></li>
+                <li><a href="">*Informatica</a></li>
+            </ul>
+        </div>-->
+        <app-sidebar style="width: 100%;"></app-sidebar>
+    </div>
+</div>

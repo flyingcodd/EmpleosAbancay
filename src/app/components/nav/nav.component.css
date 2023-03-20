@@ -1,0 +1,98 @@
+.nav{
+    /*background-color: #f8f9fa;*/
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--color-quinary);
+    font-size: 1.2rem;
+    font-weight: 600;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    box-shadow: 0 5px 10px 10px rgb(0 0 0 / 25%)
+}
+.nav__logo{
+    display: flex;
+    align-items: center;
+}
+.nav__logo__link{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+.nav__logo__link img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 0.5rem;
+}
+.nav__logo__link h1{
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--color-quinary);
+}
+.nav__links{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.nav__links .nav__link{
+    display: inline-block;
+}
+.nav__links .nav__link a{
+    text-decoration: none;
+    color: var(--color-quinary);
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    transition: all 0.3s ease;
+}
+.nav__links .nav__link a:hover{
+    background-color: var(--color-secondary);
+}
+.nav__links .nav__link a.active{
+    background-color: var(--color-secondary);
+}
+/* menu responsivo */
+.nav__toggle {
+    display: none;
+}
+.nav__toggle button{
+    background-color: transparent;
+    border: none;
+    font-size: 2rem;
+    color: var(--color-quinary);
+    cursor: pointer;
+}
+@media (max-width: 768px) {
+    .nav__toggle {
+        display: block;
+    }
+    .nav__toggle button:hover{
+        color: var(--color-tertiary);
+    }
+    .nav--open .nav__toggle button:hover{
+        color: red;
+    }
+    .nav__links .nav__link{
+        display: none;
+    }
+    .nav--open {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 350px;
+    }
+    .nav--open .nav__links{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+    }
+    .nav--open .nav__links .nav__link{
+        display: block;
+        margin: 1rem 0;
+    }
+}

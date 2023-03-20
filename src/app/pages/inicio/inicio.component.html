@@ -1,0 +1,41 @@
+<section class="section__inicio fondo_degradado_radial">
+    <div class="section__inicio__container">
+        <div class="section__inicio__container__left">
+            <h1>Empleos Abancay</h1>
+            <p>Una plataforma con el fin de brindar la mejor experiencia en buscar su proximo empleo, siempre al servicio de los ciudadanos.</p>
+            <a class="btn-primary" [routerLink]="['/empleos']">Ir a Empleos</a>
+        </div>
+        <div class="section__inicio__container__right">
+            <img src="assets/img/portada1.png" alt="logo">
+        </div>
+    </div>
+</section>
+
+<section class="section__nosotros">
+    <div class="section__nosotros__container">
+        <div class="section__nosotros__container__left">
+            <img src="assets/img/nosotros.png" alt="logo">
+        </div>
+        <div class="section__nosotros__container__right">
+            <h1>Nosotros</h1>
+            <hr>
+            <p>Somos un grupo de profesionales que hemos
+                tomado la iniciativa de hacer un portal web,
+                para que nuestros ciudadanos encuentren 
+                trabajo de calidad y verificado...</p>
+            <a class="btn-primary" [routerLink]="['/nosotros']">Saber mas</a>
+        </div>
+    </div>
+</section>
+<section class="section__empresas">
+    <div class="section__empresas__container">
+        <h1>Empresas y/o Instituciones</h1>
+        <hr>
+        <div class="section__empresas__container__cards">
+            <div class="section__empresas__container__cards__card" *ngFor="let empresa of Empresas; let idControl=index">
+                <img src="{{empresa.img_empresa}}" alt="logo" width="100">
+                <h2>{{empresa.nombre_empresa}}</h2>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,20 @@
+
+<nav class="nav fondo_degradado_radial "[ngClass]="{'nav--open': navOpen}">
+    <div class="nav__logo">
+        <a [routerLink]="['/inicio']" class="nav__logo__link">
+            <img src="https://www.tailorbrands.com/wp-content/uploads/2020/07/mcdonalds-logo.jpg" alt="logo">
+            <h1>Empleos Abancay</h1>
+        </a>
+    </div>
+    <ul class="nav__links" >
+        <li class="nav__toggle"><button (click)="toggleNav()">
+            <!--if open o close-->
+            <i class="fas fa-bars" *ngIf="!navOpen"></i>
+            <i class="fa-solid fa-xmark" *ngIf="navOpen"></i>
+        </button></li>
+        <li class="nav__link"><a [routerLink]="['/inicio']" routerLinkActive="active">Inicio</a></li>
+        <li class="nav__link"><a [routerLink]="['/empleos']" routerLinkActive="active">Empleos</a></li>
+        <li class="nav__link"><a [routerLink]="['/nosotros']" routerLinkActive="active">Nosotros</a></li>
+        <li class="nav__link"><a [routerLink]="['/contactos']" routerLinkActive="active">Contacto</a></li>
+    </ul>
+</nav>

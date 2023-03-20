@@ -1,1 +1,47 @@
 /* You can add global styles to this file, and also import other style files */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Roboto', sans-serif;
+}
+/* variables de colores */
+:root{
+    --color-primary: #133c55;
+    --color-secondary: #386fa4;
+    --color-tertiary: #59a5d8;
+    --color-quaternary: #84d2f6;
+    --color-quinary: #91e5f6;
+}
+.fondo_degradado_radial{
+    background: radial-gradient(circle, var(--color-quinary) -200%, var(--color-primary) 50%);
+}
+.btn-primary{
+    background-color: var(--color-secondary);
+    color: var(--color-quinary);
+    border: none;
+    padding: 1rem 1rem;
+    border-radius: 0.25rem;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    box-shadow: 0 5px 10px 10px rgb(0 0 0 / 10%);
+}
+.btn-primary:hover{
+    background-color: var(--color-tertiary);
+}
+.btn-circle{
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    color: var(--color-quinary);
+    background-color: var(--color-secondary);
+    box-shadow: 0 5px 10px 10px rgb(0 0 0 / 10%);
+}
