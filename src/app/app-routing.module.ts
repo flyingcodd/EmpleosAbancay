@@ -13,7 +13,8 @@ const routes: Routes = [
   { path: 'empleos/:id_anuncio', component: DetalleempleosComponent},
   { path: 'contactos', component: ContactosComponent},
   //{ path: 'dashboard', component: DashboardComponent },
-  { path: '**', pathMatch: 'full', redirectTo: '/inicio' }
+  { path: '**', pathMatch: 'full', redirectTo: 'inicio' }
+  
 ];
 
 @NgModule({
