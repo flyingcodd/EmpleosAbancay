@@ -29,4 +29,4 @@ jobs:
           server: andrew.rootservercloud.com
           username: admin@empleosabancay.aynidev.com
           password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: ./
+          local-dir: ./dist/empleos-abancay/
