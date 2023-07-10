@@ -1,4 +1,4 @@
-name: 🚀 Deploy website on push.
+name: 🚀 Deploy website on push
 on:
   push:
     branches:
@@ -21,12 +21,12 @@ jobs:
         run: |
           npm install -g @angular/cli
           npm install
-          ng build --prod
+          ng build --configuration=production
 
       - name: 📂 Sync files
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
           server: andrew.rootservercloud.com
-          username: admin@empleosabancay.aynidev.com
+          username: admin@admi.floreriaykebana.com
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./dist/
