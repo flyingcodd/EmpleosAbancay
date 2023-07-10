@@ -27,6 +27,6 @@ jobs:
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
           server: andrew.rootservercloud.com
-          username: admin@admi.floreriaykebana.com
+          username: admin@empleosabancay.aynidev.com
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./dist/
