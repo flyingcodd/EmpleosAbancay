@@ -11,7 +11,7 @@ export class ServiceapiService {
   constructor(
     private httpClient : HttpClient
   ) { }
-  API = 'http://localhost:3000/api/';
+  API = 'https://apiempleos.aynidev.com/api/';
 
   getEmpresas(): Observable <Data> {
     return this.httpClient.get<Data>(this.API + 'empresas');
