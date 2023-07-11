@@ -30,7 +30,3 @@ jobs:
           username: admin@empleosabancay.aynidev.com
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./dist/empleos-abancay/
-          
-      - name: 📁 Include .htaccess file
-        run: |
-          cp .htaccess ./dist/empleos-abancay/.htaccess
