@@ -7,13 +7,13 @@ import { InicioComponent } from './pages/inicio/inicio.component';
 import { NosotrosComponent } from './pages/nosotros/nosotros.component';
 
 const routes: Routes = [
-  { path: 'inicio', component: InicioComponent },
+  { path: '', component: InicioComponent },
   { path: 'nosotros', component: NosotrosComponent},
   { path: 'empleos', component: EmpleosComponent},
   { path: 'empleos/:id_anuncio', component: DetalleempleosComponent},
   { path: 'contactos', component: ContactosComponent},
   //{ path: 'dashboard', component: DashboardComponent },
-  { path: '**', pathMatch: 'full', redirectTo: 'inicio' }
+  { path: '**', pathMatch: 'full', redirectTo: '' }
   
 ];
 
