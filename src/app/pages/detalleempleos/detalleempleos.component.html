@@ -44,7 +44,7 @@
                         <div>
                             <li><i class="fa-solid fa-circle-info"></i><span>Detalles:</span></li>
                             <p>
-                                <li *ngFor="let detalle of Empleo.detalles_anuncio.split('*')">
+                                <li *ngFor="let detalle of Empleo.detalles_anuncio.split('|')">
                                     - {{ detalle }}
                                 </li>
                                 <br> Para mas info: <br>
