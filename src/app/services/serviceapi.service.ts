@@ -28,7 +28,7 @@ export class ServiceapiService {
   }
   updateEstadoAnuncio(id: number, estado: number, Empleo: any): Observable <Data> {
     Empleo.estado_anuncio = estado;
-    return this.httpClient.patch<Data>(this.API + 'anuncios/' + id, Empleo);
+    return this.httpClient.put<Data>(this.API + 'anuncios/' + id, Empleo);
   }
 
 }
