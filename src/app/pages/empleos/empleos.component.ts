@@ -25,13 +25,13 @@ export class EmpleosComponent {
             for(let i = 0; i < this.Empleos.length; i++){
               if(this.Empleos[i].fecha_fin_anuncio.substring(0, 10) > new Date().toISOString().substring(0, 10)){
                 // actualiza el estado del anuncio
-                this.serviceapi.updateEstadoAnuncio(this.Empleos[i].id_anuncio, 0,this.Empleos[i] ).subscribe(
-                  (data) => {
-                    if(data.type == "success") {
-                      console.log("Actualizado");
-                    }
-                  }
-                );
+                // this.serviceapi.updateEstadoAnuncio(this.Empleos[i].id_anuncio, 0,this.Empleos[i] ).subscribe(
+                //   (data) => {
+                //     if(data.type == "success") {
+                //       console.log("Actualizado");
+                //     }
+                //   }
+                // );
               }
                 
               if(this.Empleos[i].estado_anuncio == '1'){
